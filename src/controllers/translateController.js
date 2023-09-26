@@ -10,6 +10,14 @@ export const translate = async (req, res) => {
   console.log(req.body);
   const { text, source, target } = req.body;
 
+  // 같은 언어일 때 오류 처리
+  if (source === target) {
+    res.send({
+      translatedText: text,
+    });
+    return;
+  }
+
   const result = await translate.translate(text, {
     from: source,
     to: target,
