@@ -22,6 +22,7 @@ export const getAudioFile = async (req, res) => {
       // LINEAR16: 더 고품질
       // MP3: 일반적 품질
       audioEncoding: "MP3",
+      effectsProfileId: ["telephony-class-application"],
     },
   };
 
